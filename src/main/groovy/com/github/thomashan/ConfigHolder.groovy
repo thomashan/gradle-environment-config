@@ -1,4 +1,4 @@
-package org.thomashan
+package com.github.thomashan
 
 import groovy.transform.PackageScope
 
