@@ -6,7 +6,6 @@ import groovy.transform.PackageScope
 final class ConfigHolder {
     static ConfigObject config() {
         String env = System.getProperty("env") ?: "dev"
-        URL configUrl = getClass().getResource("/application.groovy")
 
         ConfigObject defaultConfig = defaultConfig(env)
         ConfigObject externalConfig = externalConfig(env)
