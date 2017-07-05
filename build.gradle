@@ -1,46 +1,17 @@
 apply plugin: "groovy"
-apply plugin: "idea"
-apply plugin: "maven"
+//apply plugin: "maven"
 
 sourceCompatibility = 1.8
 version "0.1"
-group "org.thomashan"
+group "com.github.thomashan"
 
 repositories {
     mavenLocal()
     mavenCentral()
 }
 
-ext {
-    gradleWrapperVersion = project.gradleWrapperVersion
-}
-
 dependencies {
-    compile "org.codehaus.groovy:groovy-all:2.4.3"
+    compile "org.codehaus.groovy:groovy-all:2.4.12"
 
     testCompile "junit:junit:4.12"
-}
-
-
-uploadArchives {
-    repositories {
-        flatDir {
-            dirs 'repos'
-        }
-    }
-}
-
-// FIXME: load the environment variables automatically for test
-// FIXME: load the environment variables and pass it onto the java classes
-
-loadEnv()
-
-def loadEnv() {
-    def env = hasProperty("env") ? env : "dev"
-    System.setProperty("env", env)
-    println("Setting env: ${System.getProperty('env')}")
-}
-
-task printProps << {
-    println "Get env: ${System.getProperty('env')}"
 }
