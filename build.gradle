@@ -1,5 +1,5 @@
 apply plugin: "groovy"
-//apply plugin: "maven"
+apply plugin: "maven"
 
 sourceCompatibility = 1.8
 version "0.1"

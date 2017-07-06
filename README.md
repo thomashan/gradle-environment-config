@@ -43,3 +43,7 @@ Put default configuration in `src/main/resources/application.groovy`
 ### Application environment
 ### Build environment
 
+
+## TODO:
+* able to override location of application config
+* able to override location of build config
