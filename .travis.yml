@@ -1,0 +1,20 @@
+language: groovy
+
+jdk:
+   - oraclejdk8
+scala:
+   - 2.12.2
+
+script:
+  - ./gradlew check
+  - sonar-scanner
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+#  - sbt coveralls
+#  - sbt codacyCoverage
+
+addons:
+  sonarqube:
+    organization: "thomashan-github"
+    branches:
+      - master
