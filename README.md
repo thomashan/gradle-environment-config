@@ -59,3 +59,8 @@ Put default configuration in `src/main/resources/application.groovy`
 ## TODO:
 * able to override location of application config
 * able to override location of build config
+
+## Comparison
+* https://github.com/lferenczi/gradle-env-plugin
+* https://bitbucket.org/AlexanderBartash/gradle-environments-plugin/wiki/Home
+* https://github.com/marceloemanoel/gradle-environments-plugin

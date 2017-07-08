@@ -9,8 +9,8 @@ script:
   - ./gradlew check
   - sonar-scanner
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
-#  - sbt coveralls
+#  - bash <(curl -s https://codecov.io/bash)
+  - ./gradlew cobertura coveralls
 #  - sbt codacyCoverage
 
 addons:
