@@ -7,32 +7,53 @@ Per environment configuration for the application and gradle build!
 
 Suggestions and feedback is very much appreciated.
 
-## Usage
+## Quick start
+This plugin inspired from the Grails per environment configurations.
+
+### Application Config
+Put the application configuration in `src/main/resources/application.groovy`
+```groovy
+key1 = value1
+key2 = value2
+environments {
+    customEnvironment {
+        key2 = customEnvironmentValue2        
+    }
+}
+```
+
+Inside the application code you can reference the config
+```groovy
+import com.github.thomashan.config.ApplicationConfigHolder
+
+ConfigObject config = ApplicationConfigHolder.config()
+String key1Value = config.key1
+```
+The value of key1Value would change depending on the `-Denv=${ENVIRONMENT}`. 
+`./gradle test -Denv=test`
+### Build config
+The build script `build.gradle` won't have access to the application config file `src/main/resources/application.groovy`
+because it's not in the classpath.
+You can put configuration in `src/main/resources/build.groovy` for `build.gradle` to consume.
+```groovy
+buildKey1 = value1
+buildKey2 = value2
+environments {
+    customEnvironment {
+        buildKey2 = customEnvironmentValue2        
+    }
+}
+```
+Inside `build.gradle` you can reference configuration in `build.groovy` with the config property
+For example
+```groovy
+println config.buildKey1
+```
 
 ## Design consideration
 * simple
 * lightweight
 * minimal dependencies
-
-
-# Overview
-This is an example Gradle project which loads the per environments settings from /src/main/resources/application.groovy.
-This project inspired from the Grails per environment configurations.
-
-Pass in the environment using the env property name
-gradle -Denv=prod test
-
-The default environment value is "dev"
-When running tests the environment should switch to "test"
-i.e. gradle test
-should switch to test environment automatically.
-
-As with Grails the built in environments are
-* dev
-* test
-* prod
-
-Custom environments can be passed in as well.
 
 ## Ways to override configuration
 
@@ -43,10 +64,9 @@ Custom environments can be passed in as well.
 Can embed logic
 
 ## Dependencies
-* java v???
-* groovy v???
-* gradle v???
-
+* java 1.8+
+* groovy 2.4+
+* gradle 4+
 
 Put default configuration in `src/main/resources/application.groovy`
 
@@ -58,6 +78,7 @@ Put default configuration in `src/main/resources/application.groovy`
 ## TODO:
 * able to override location of application config
 * able to override location of build config
+* when running tests (i.e. `./gradlew test` `./gradlew check`) should switch to test environment automatically.
 
 ## Comparison
 * https://github.com/lferenczi/gradle-env-plugin
