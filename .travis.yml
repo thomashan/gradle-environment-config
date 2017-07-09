@@ -16,3 +16,11 @@ addons:
     organization: "thomashan-github"
     branches:
       - master
+
+deploy:
+  provider: releases
+  file: "./gradlew publishPlugins"
+  skip_cleanup: true
+  on:
+    all_branches: true
+    tags: true
