@@ -12,7 +12,7 @@ after_success:
 #  - ./gradlew codacyUpload
 
 addons:
-  sonarqube:
+  sonarcloud:
     organization: "thomashan-github"
     branches:
       - master
