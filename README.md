@@ -1,6 +1,6 @@
 # gradle-environment-config
 [![Build Status](https://travis-ci.org/thomashan/gradle-environment-config.svg)](https://travis-ci.org/thomashan/gradle-environment-config)
-[![Quality Gate](https://sonarcloud.io/api/badges/gate?key=com.github.thomashan.gradle-environment-config)](https://sonarcloud.io/dashboard?id=com.github.thomashan.gradle-environment-config)
+[![Quality Gate](https://sonarcloud.io/api/badges/gate?key=com.github.thomashan.config.gradle-environment-config)](https://sonarcloud.io/dashboard?id=com.github.thomashan.config.gradle-environment-config)
 [![Coverage Status](https://coveralls.io/repos/github/thomashan/gradle-environment-config/badge.svg)](https://coveralls.io/github/thomashan/gradle-environment-config)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1984f0cf64464a238c59219751d77794)](https://www.codacy.com/app/thomashan/gradle-environment-config?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=thomashan/gradle-environment-config&amp;utm_campaign=Badge_Grade)
 
