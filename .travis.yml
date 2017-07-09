@@ -2,8 +2,6 @@ language: groovy
 
 jdk:
    - oraclejdk8
-scala:
-   - 2.12.2
 
 script:
   - ./gradlew check
@@ -11,7 +9,7 @@ script:
 after_success:
 #  - bash <(curl -s https://codecov.io/bash)
   - ./gradlew jacocoTestReport coveralls
-#  - sbt codacyCoverage
+#  - ./gradlew codacyUpload
 
 addons:
   sonarqube:
