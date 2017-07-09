@@ -18,8 +18,8 @@ addons:
       - master
 
 deploy:
-  provider: releases
-  file: "./gradlew publishPlugins"
+  provider: script
+  script: "./gradlew publishPlugins"
   skip_cleanup: true
   on:
     all_branches: true
